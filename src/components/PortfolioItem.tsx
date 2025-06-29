@@ -9,6 +9,7 @@ export default function PortfolioItem({
   illustration,
   reverse = false,
   mockup = false,
+  phoneIllustration = false,
 }: {
   title: string;
   description: string | React.ReactNode;
@@ -16,6 +17,7 @@ export default function PortfolioItem({
   illustration: StaticImageData;
   reverse?: boolean;
   mockup?: boolean;
+  phoneIllustration?: boolean;
 }) {
   const contentSection = (
     <div className="flex flex-col text-black">
@@ -51,11 +53,15 @@ export default function PortfolioItem({
   );
 
   const imageSection = (
-    <Image src={illustration} alt={`${title} illustration`} />
+    <Image
+      src={illustration}
+      alt={`${title} illustration`}
+      className={`${reverse ? `${phoneIllustration ? "ml-28" : ""}` : `${phoneIllustration ? "mr-28" : ""}`}`}
+    />
   );
 
   return (
-    <div className="flex flex-row gap-56 items-center">
+    <div className="flex flex-row gap-80 items-center">
       {reverse ? imageSection : contentSection}
       {reverse ? contentSection : imageSection}
     </div>

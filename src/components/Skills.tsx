@@ -88,8 +88,6 @@ Mon rôle consistait à concevoir, développer et maintenir l'application mobile
               <Image
                 src={ImageCollection.eyeIcon}
                 alt="visualize icon"
-                width={24}
-                height={24}
                 className="ml-2"
               />
             </div>

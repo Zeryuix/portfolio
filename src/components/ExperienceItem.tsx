@@ -21,16 +21,12 @@ export default function ExperienceItem({
           <Image
             src={ImageCollection.schoolLogo}
             alt="school logo"
-            width={32}
-            height={32}
             className="mr-3"
           />
         ) : (
           <Image
             src={ImageCollection.workLogo}
             alt="work logo"
-            width={32}
-            height={32}
             className="mr-3"
           />
         )}

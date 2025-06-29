@@ -1,5 +1,3 @@
-"use client";
-
 import Input from "./Input";
 import Image from "next/image";
 import ImageCollection from "./ImageCollection";
@@ -34,16 +32,44 @@ export default function Contact() {
     return !Object.values(errors).some((error) => error);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [submitError, setSubmitError] = useState<string | null>(null);
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
 
     if (validateForm()) {
       setSubmitting(true);
-      setTimeout(() => {
+
+      try {
+        const response = await fetch("/api/send", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(
+            data.error || "Une erreur est survenue lors de l'envoi du message"
+          );
+        }
+
         setFormSubmitted(true);
-        setSubmitting(false);
         setFormData({ name: "", email: "", message: "" });
-      }, 1000);
+      } catch (error) {
+        console.error("Erreur lors de l'envoi du message:", error);
+        setSubmitError(
+          error instanceof Error
+            ? error.message
+            : "Une erreur est survenue lors de l'envoi du message"
+        );
+      } finally {
+        setSubmitting(false);
+      }
     }
   };
 
@@ -63,6 +89,12 @@ export default function Contact() {
             Votre message a bien été envoyé ! Je vous répondrai dans les plus
             brefs délais.
           </p>
+        </div>
+      )}
+
+      {submitError && (
+        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6 max-w-lg w-full">
+          <p className="text-center">{submitError}</p>
         </div>
       )}
       <form onSubmit={handleSubmit} className="w-full max-w-lg">
@@ -110,8 +142,6 @@ export default function Contact() {
         <Image
           src={ImageCollection.upIcon}
           alt="go up icon"
-          width={24}
-          height={24}
           className="self-center"
         />
       </a>

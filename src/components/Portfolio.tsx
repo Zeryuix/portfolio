@@ -34,7 +34,7 @@ export default function Portfolio() {
           illustration={ImageCollection.URWIllustration}
           link="https://play.google.com/store/apps/details?id=com.westfield.one&pli=1"
           title="URW"
-          reverse={false}
+          phoneIllustration={true}
         />
         <PortfolioItem
           description={highlightTechs(
@@ -61,8 +61,8 @@ export default function Portfolio() {
           illustration={ImageCollection.epitatouIllustration}
           link="https://www.figma.com/proto/jAnzlEhx8hIknm0RuWpOww/Maquettes-mobile-EPITATOU?node-id=1-3&starting-point-node-id=1%3A3"
           title="Epitatou"
-          reverse={false}
           mockup={true}
+          phoneIllustration={true}
         />
         <PortfolioItem
           description={highlightTechs(

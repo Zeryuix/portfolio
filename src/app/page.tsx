@@ -1,3 +1,5 @@
+"use client";
+
 import About from "@/components/About";
 import Accueil from "@/components/Home";
 import Skills from "@/components/Skills";
