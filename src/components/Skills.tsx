@@ -77,7 +77,12 @@ Mon rôle consistait à concevoir, développer et maintenir l'application mobile
           <div className="mb-6">
             <Image src={ImageCollection.CVImage} alt="CV preview" width={434} />
           </div>
-          <button className="px-6 py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black font-medium">
+          <a
+            href="/CV_Leo_MERMET_2025.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-6 py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black font-medium inline-block cursor-pointer"
+          >
             <div className="flex flex-row items-center">
               <p className="font-semibold text-[20px]">Visualiser CV</p>
               <Image
@@ -88,7 +93,7 @@ Mon rôle consistait à concevoir, développer et maintenir l'application mobile
                 className="ml-2"
               />
             </div>
-          </button>
+          </a>
         </div>
       </div>
     </div>

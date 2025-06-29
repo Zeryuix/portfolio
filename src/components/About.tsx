@@ -3,7 +3,7 @@ import ImageCollection from "./ImageCollection";
 
 export default function About() {
   return (
-    <div className="flex flex-col bg-white items-center py-10 px-36">
+    <div id="about" className="flex flex-col bg-white items-center py-10 px-36">
       <h2 className="text-black mb-[54px] font-semibold text-2xl">
         👋 À propos de moi
       </h2>

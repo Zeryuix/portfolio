@@ -28,6 +28,7 @@ export default function PortfolioItem({
       <a
         href={link}
         target="_blank"
+        rel="noopener noreferrer"
         className={`text-secondary font-semibold text-xl ${
           reverse ? "self-end" : ""
         }`}

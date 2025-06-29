@@ -29,7 +29,10 @@ export default function Contact() {
         </div>
       </button>
 
-      <div className="w-12 h-12 bg-secondary flex items-center justify-center z-10 mb-[-24px]">
+      <a
+        className="w-12 h-12 bg-secondary flex items-center justify-center z-10 mb-[-24px] cursor-pointer"
+        href="#home"
+      >
         <Image
           src={ImageCollection.upIcon}
           alt="go up icon"
@@ -37,7 +40,7 @@ export default function Contact() {
           height={24}
           className="self-center"
         />
-      </div>
+      </a>
       <Footer />
     </div>
   );
