@@ -1,9 +1,52 @@
+"use client";
+
 import Input from "./Input";
 import Image from "next/image";
 import ImageCollection from "./ImageCollection";
 import Footer from "./Footer";
+import { useState } from "react";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [formSubmitted, setFormSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+
+  const handleInputChange = (field: string) => (value: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      [field]: value,
+    }));
+  };
+
+  const validateForm = () => {
+    const errors = {
+      name: formData.name.trim().length < 2,
+      email: !/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(
+        formData.email
+      ),
+      message: formData.message.trim().length < 10,
+    };
+
+    return !Object.values(errors).some((error) => error);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (validateForm()) {
+      setSubmitting(true);
+      setTimeout(() => {
+        setFormSubmitted(true);
+        setSubmitting(false);
+        setFormData({ name: "", email: "", message: "" });
+      }, 1000);
+    }
+  };
+
   return (
     <div className="flex flex-col bg-black items-center pt-[40px]">
       <h2 className="text-white mb-[40px] font-semibold text-2xl">
@@ -13,21 +56,52 @@ export default function Contact() {
         Une opportunité, une question ou simplement envie d'échanger ? N'hésitez
         pas à me laisser un message, je vous répondrai rapidement.
       </p>
-      <Input type="name" />
-      <Input type="email" />
-      <Input type="message" />
-      <button className="mt-6 mb-20 px-4 py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black font-medium">
-        <div className="flex flex-row items-center">
-          <p className="font-semibold text-[20px]">Envoyer</p>
-          <Image
-            src={ImageCollection.sendIcon}
-            alt="visualize icon"
-            width={24}
-            height={24}
-            className="ml-2"
-          />
+
+      {formSubmitted && (
+        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6 max-w-lg w-full">
+          <p className="text-center">
+            Votre message a bien été envoyé ! Je vous répondrai dans les plus
+            brefs délais.
+          </p>
         </div>
-      </button>
+      )}
+      <form onSubmit={handleSubmit} className="w-full max-w-lg">
+        <Input
+          type="name"
+          value={formData.name}
+          onChange={handleInputChange("name")}
+        />
+        <Input
+          type="email"
+          value={formData.email}
+          onChange={handleInputChange("email")}
+        />
+        <Input
+          type="message"
+          value={formData.message}
+          onChange={handleInputChange("message")}
+        />
+        <button
+          type="submit"
+          className="mt-6 mb-20 px-4 py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black font-medium w-full"
+          disabled={submitting}
+        >
+          <div className="flex flex-row items-center justify-center">
+            <p className="font-semibold text-[20px]">
+              {submitting ? "Envoi en cours..." : "Envoyer"}
+            </p>
+            {!submitting && (
+              <Image
+                src={ImageCollection.sendIcon}
+                alt="send icon"
+                width={24}
+                height={24}
+                className="ml-2"
+              />
+            )}
+          </div>
+        </button>
+      </form>
 
       <a
         className="w-12 h-12 bg-secondary flex items-center justify-center z-10 mb-[-24px] cursor-pointer"
