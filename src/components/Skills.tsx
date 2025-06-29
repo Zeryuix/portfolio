@@ -79,7 +79,7 @@ Mon rôle consistait à concevoir, développer et maintenir l'application mobile
           </div>
           <button className="px-6 py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black font-medium">
             <div className="flex flex-row items-center">
-              <p>Visualiser CV</p>
+              <p className="font-semibold text-[20px]">Visualiser CV</p>
               <Image
                 src={ImageCollection.eyeIcon}
                 alt="visualize icon"

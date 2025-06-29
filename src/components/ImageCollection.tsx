@@ -14,6 +14,15 @@ import schoolLogo from "../assets/school-logo.svg";
 import workLogo from "../assets/work-logo.svg";
 import CVImage from "../assets/CV.svg";
 import eyeIcon from "../assets/eye-icon.svg";
+import epitatouIllustration from "../assets/epitatou-illustration.svg";
+import newrestIllustration from "../assets/newrest-illustration.svg";
+import rakutenIllustration from "../assets/rakuten-illustration.svg";
+import URWIllustration from "../assets/URW-illustration.svg";
+import externalLinkIcon from "../assets/external-link-icon.svg";
+import sendIcon from "../assets/send-icon.svg";
+import upIcon from "../assets/up-icon.svg";
+import githubIcon from "../assets/github-icon.svg";
+import mailIcon from "../assets/mail-icon.svg";
 
 export default {
   profilImage,
@@ -32,4 +41,13 @@ export default {
   workLogo,
   CVImage,
   eyeIcon,
+  epitatouIllustration,
+  newrestIllustration,
+  rakutenIllustration,
+  URWIllustration,
+  externalLinkIcon,
+  sendIcon,
+  upIcon,
+  githubIcon,
+  mailIcon,
 };

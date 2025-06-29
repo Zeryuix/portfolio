@@ -2,6 +2,7 @@ import About from "@/components/About";
 import Accueil from "@/components/Home";
 import Skills from "@/components/Skills";
 import Portfolio from "@/components/Portfolio";
+import Contact from "@/components/Contact";
 
 export default function Main() {
   return (
@@ -10,6 +11,7 @@ export default function Main() {
       <About />
       <Skills />
       <Portfolio />
+      <Contact />
     </div>
   );
 }
