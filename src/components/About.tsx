@@ -19,10 +19,7 @@ export default function About() {
   };
 
   return (
-    <div
-      id="profile"
-      className="flex flex-col bg-white items-center py-10 px-36"
-    >
+    <div id="about" className="flex flex-col bg-white items-center py-10 px-36">
       <AnimatedElement variant="fadeIn">
         <h2 className="text-black mb-[54px] font-semibold text-2xl">
           👋 {t("about.title")}
