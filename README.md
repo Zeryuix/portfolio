@@ -2,6 +2,10 @@
 
 Ce projet est mon portfolio personnel développé avec Next.js, React et TypeScript. Il présente mes compétences, expériences et projets dans le domaine du développement web.
 
+## Site en ligne
+
+Visitez mon portfolio : [https://portfolio-leo-mermet.vercel.app/](https://portfolio-leo-mermet.vercel.app/)
+
 ## Technologies utilisées
 
 - **Frontend**: Next.js, React, TypeScript, Tailwind CSS, Framer Motion
