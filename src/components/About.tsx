@@ -30,20 +30,20 @@ export default function About() {
           <Image
             src={ImageCollection.profilImage}
             alt={"Profil Image"}
-            width={600}
-            height={600}
-            className="rounded-full"
+            width={1000}
+            height={1000}
+            className="rounded-full shadow-[4px_4px_8px_0_rgba(13,39,80,0.25)_,_-12px_-12px_38px_0_rgba(255,255,255,1)]"
           />
         </AnimatedElement>
         <div className="text-black space-y-6 text-[20px]">
           <AnimatedElement variant="slideLeft" delay={0.3}>
             <p>
               {formatText(t("about.paragraph1"), {
-                React: "<strong>React</strong>",
-                "React Native": "<strong>React Native</strong>",
-                Flutter: "<strong>Flutter</strong>",
-                TypeScript: "<strong>TypeScript</strong>",
-                "Rakuten et Thales": "<strong>Rakuten et Thales</strong>",
+                "Léo Mermet": "<strong>Léo Mermet</strong>",
+                EPITA: "<strong>EPITA</strong>",
+                "intuitives, performantes et bien pensées":
+                  "<strong>intuitives, performantes et bien pensées</strong>",
+                Figma: "<strong>Figma</strong>",
               })}
             </p>
           </AnimatedElement>
@@ -51,10 +51,13 @@ export default function About() {
           <AnimatedElement variant="slideLeft" delay={0.4}>
             <p>
               {formatText(t("about.paragraph2"), {
-                "qualité du code": "<strong>qualité du code</strong>",
-                "l'accessibilité": "<strong>l'accessibilité</strong>",
-                "expérience utilisateur":
-                  "<strong>expérience utilisateur</strong>",
+                Rakuten: "<strong>Rakuten</strong>",
+                Thales: "<strong>Thales</strong>",
+                Noesio: "<strong>Noesio</strong>",
+                Expo: "<strong>Expo</strong>",
+                "React Native": "<strong>React Native</strong>",
+                "tests, CI/CD, code review, intégration de tracking":
+                  "<strong>tests, CI/CD, code review, intégration de tracking</strong>",
               })}
             </p>
           </AnimatedElement>
@@ -62,6 +65,22 @@ export default function About() {
           <AnimatedElement variant="slideLeft" delay={0.5}>
             <p>
               {formatText(t("about.paragraph3"), {
+                React: "<strong>React</strong>",
+                "React Native": "<strong>React Native</strong>",
+                Typescript: "<strong>Typescript</strong>",
+                Flutter: "<strong>Flutter</strong>",
+                "lisibilité du code": "<strong>lisibilité du code</strong>",
+                "collaboration avec les équipes produit et design":
+                  "<strong>collaboration avec les équipes produit et design</strong>",
+                "qualité de l'expérience utilisateur":
+                  "<strong>qualité de l'expérience utilisateur</strong>",
+              })}
+            </p>
+          </AnimatedElement>
+
+          <AnimatedElement variant="slideLeft" delay={0.6}>
+            <p>
+              {formatText(t("about.paragraph4"), {
                 "progresser techniquement et humainement":
                   "<strong>progresser techniquement et humainement</strong>",
                 "ambitieux et utiles": "<strong>ambitieux et utiles</strong>",

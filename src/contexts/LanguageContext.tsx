@@ -54,14 +54,18 @@ const translations: Translations = {
     en: "About me",
   },
   "about.paragraph1": {
-    fr: "Ingénieur développeur front-end, je suis passionné par la création d'interfaces utilisateur modernes et performantes. Après plusieurs expériences en entreprise, notamment chez Rakuten et Thales, j'ai développé une expertise dans les stacks modernes comme React, React Native, Flutter et TypeScript.",
-    en: "As a front-end developer engineer, I am passionate about creating modern and high-performance user interfaces. After several professional experiences, notably at Rakuten and Thales, I have developed expertise in modern stacks such as React, React Native, Flutter, and TypeScript.",
+    fr: "Je m'appelle Léo Mermet, développeur front-end web & mobile récemment diplômé de l'EPITA, passionné par la création d'interfaces intuitives, performantes et bien pensées. J'ai une appétence pour le design et un œil critique sur l'UX/UI de mes applications. J'apprécie concevoir moi-même les maquettes de mes projets sur Figma.",
+    en: "My name is Léo Mermet, a web & mobile front-end developer recently graduated from EPITA, passionate about creating intuitive, performant, and well-designed interfaces. I have an appetite for design and a critical eye on the UX/UI of my applications. I enjoy designing my project mockups myself using Figma.",
   },
   "about.paragraph2": {
-    fr: "Je suis particulièrement attaché à la qualité du code, à l'expérience utilisateur et à la performance des applications. J'accorde une grande importance à l'accessibilité, et à la qualité de l'expérience utilisateur. Autonome, curieux et rigoureux, j'aime apprendre en continu et travailler en équipe.",
-    en: "I am particularly committed to code quality, user experience, and application performance. I place great importance on accessibility and the quality of the user experience. Autonomous, curious, and rigorous, I enjoy continuous learning and teamwork.",
+    fr: "Durant mes études, j'ai eu l'opportunité de travailler sur des projets concrets pour des entreprises comme Rakuten et Thales, puis de rejoindre Noesio, une ESN où j'étais le développeur front d'une équipe agile. J'y ai contribué à des applications mobiles à grande échelle avec Expo et React Native, en appliquant des bonnes pratiques  : tests, CI/CD, code review, intégration de tracking, et respect des bonnes pratiques UX.",
+    en: "During my studies, I had the opportunity to work on concrete projects for companies like Rakuten and Thales, then joined Noesio, an ESN where I was the front-end developer in an agile team. I contributed to large-scale mobile applications with Expo and React Native, applying best practices: testing, CI/CD, code review, tracking integration, and adherence to UX best practices.",
   },
   "about.paragraph3": {
+    fr: "Je suis à l'aise sur des stacks modernes : React, React Native, Typescript, Flutter, avec une attention particulière à la lisibilité du code, à la collaboration avec les équipes produit et design, et à la qualité de l'expérience utilisateur. Autonome, curieux et rigoureux, j'aime apprendre en continu et travailler en équipe.",
+    en: "I am comfortable with modern stacks: React, React Native, Typescript, Flutter, with particular attention to code readability, collaboration with product and design teams, and the quality of the user experience. Autonomous, curious, and rigorous, I enjoy continuous learning and teamwork.",
+  },
+  "about.paragraph4": {
     fr: "Aujourd'hui, je suis à l'écoute d'opportunités où je pourrai continuer à progresser techniquement et humainement, au sein de projets ambitieux et utiles.",
     en: "Today, I am open to opportunities where I can continue to grow technically and personally, within ambitious and meaningful projects.",
   },
@@ -114,7 +118,7 @@ const translations: Translations = {
   },
   "portfolio.epitatou.description": {
     fr: "Application mobile conçue pour accompagner les étudiants de première année à l'EPITA dans leur apprentissage. Elle permet de consulter des cours, de s'entraîner avec des exercices, de collaborer en groupe via des \"rooms\", et d'ajouter du contenu via OCR et résumés générés par IA. Développée avec Flutter, avec des maquettes réalisées sur Figma, l'app propose une expérience simple et mobile-first pensée pour le quotidien étudiant.",
-    en: "Mobile application designed to support first-year EPITA students in their learning. It allows them to consult courses, practice with exercises, collaborate in groups via \"rooms\", and add content via OCR and AI-generated summaries. Developed with Flutter, with mockups created in Figma, the app offers a simple, mobile-first experience designed for student daily life.",
+    en: 'Mobile application designed to support first-year EPITA students in their learning. It allows them to consult courses, practice with exercises, collaborate in groups via "rooms", and add content via OCR and AI-generated summaries. Developed with Flutter, with mockups created in Figma, the app offers a simple, mobile-first experience designed for student daily life.',
   },
   "portfolio.rakuten.description": {
     fr: "Développement d'un back-office web interne pour la visualisation et l'analyse des messages échangés entre utilisateurs sur la plateforme Rakuten C2C. L'interface permet d'explorer les conversations via tableaux et graphiques dynamiques. Projet réalisé en collaboration avec la cheffe d'équipe C2C de Rakuten France, réalisée en React, NextJS et Material-UI avec maquettes réalisées sur Figma.",
