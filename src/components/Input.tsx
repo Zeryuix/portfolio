@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 type InputProps = {
   type: "name" | "email" | "message";
@@ -13,17 +14,18 @@ export default function Input({
   onChange,
   value,
 }: InputProps) {
+  const { t } = useLanguage();
   const [error, setError] = useState<string>("");
   const [touched, setTouched] = useState<boolean>(false);
 
   const getDefaultPlaceholder = () => {
     switch (type) {
       case "name":
-        return "Nom";
+        return t("input.name");
       case "email":
-        return "Email";
+        return t("input.email");
       case "message":
-        return "Message";
+        return t("input.message");
       default:
         return "";
     }
@@ -31,24 +33,24 @@ export default function Input({
 
   const validateInput = (val: string) => {
     if (!val.trim()) {
-      return "Ce champ est requis";
+      return t("input.required");
     }
 
     switch (type) {
       case "name":
         if (val.trim().length < 2) {
-          return "Le nom doit contenir au moins 2 caractères";
+          return t("input.name.error");
         }
         break;
       case "email":
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         if (!emailRegex.test(val)) {
-          return "Veuillez entrer une adresse email valide";
+          return t("input.email.error");
         }
         break;
       case "message":
         if (val.trim().length < 10) {
-          return "Le message doit contenir au moins 10 caractères";
+          return t("input.message.error");
         }
         break;
     }

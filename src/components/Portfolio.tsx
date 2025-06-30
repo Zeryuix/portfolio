@@ -1,6 +1,7 @@
 import PortfolioItem from "./PortfolioItem";
 import ImageCollection from "./ImageCollection";
 import React from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const highlightTechs = (text: string, techs: string[]) => {
   let result = text;
@@ -16,19 +17,17 @@ const highlightTechs = (text: string, techs: string[]) => {
 };
 
 export default function Portfolio() {
+  const { t } = useLanguage();
+  
   return (
-    <div className="flex flex-col bg-white items-center px-[124px] py-10">
+    <div id="portfolio" className="flex flex-col bg-white items-center px-[124px] py-10">
       <h2 className="text-black mb-[54px] font-semibold text-2xl">
-        📁 Portfolio
+        {t("portfolio.title")}
       </h2>
       <div className="flex flex-col gap-[120px] mb-20">
         <PortfolioItem
           description={highlightTechs(
-            `Application mobile grand public pour les centres commerciaux Westfield,
-        permettant aux utilisateurs de consulter les actualités, événements, offres et services
-        de plus de 60 centres à travers le monde. Développée avec React Native, Expo et TypeScript,
-        l'application intègre également des contenus web construits en React via des WebViews, et
-        est utilisée par plus d'un million d'utilisateurs à l'international.`,
+            t("portfolio.urw.description"),
             ["React Native", "Expo", "TypeScript", "React", "WebViews"]
           )}
           illustration={ImageCollection.URWIllustration}
@@ -38,9 +37,7 @@ export default function Portfolio() {
         />
         <PortfolioItem
           description={highlightTechs(
-            `Application destinée aux baristas à bord des trains afin de calculer leurs 
-        bonus de rémunération en fonction de leurs ventes et de leurs objectifs de ventes. 
-        Développée avec React Native, Expo et Typescript et maquettes réalisées sur Figma.`,
+            t("portfolio.newrest.description"),
             ["React Native", "Expo", "Typescript", "Figma"]
           )}
           illustration={ImageCollection.newrestIllustration}
@@ -51,11 +48,7 @@ export default function Portfolio() {
         />
         <PortfolioItem
           description={highlightTechs(
-            `Application mobile conçue pour accompagner les étudiants de première année à
-            l'EPITA dans leur apprentissage. Elle permet de consulter des cours, de s'entraîner avec
-            des exercices, de collaborer en groupe via des "rooms", et d'ajouter du contenu via OCR
-            et résumés générés par IA. Développée avec Flutter, avec des maquettes réalisées sur Figma,
-            l'app propose une expérience simple et mobile-first pensée pour le quotidien étudiant.`,
+            t("portfolio.epitatou.description"),
             ["Flutter", "Figma", "OCR", "IA"]
           )}
           illustration={ImageCollection.epitatouIllustration}
@@ -66,11 +59,7 @@ export default function Portfolio() {
         />
         <PortfolioItem
           description={highlightTechs(
-            `Développement d'un back-office web interne pour la visualisation et l'analyse 
-        des messages échangés entre utilisateurs sur la plateforme Rakuten C2C. L'interface permet 
-        d'explorer les conversations via tableaux et graphiques dynamiques. Projet réalisé en 
-        collaboration avec la cheffe d'équipe C2C de Rakuten France, réalisée en React, NextJS et 
-        Material-UI avec maquettes réalisées sur Figma.`,
+            t("portfolio.rakuten.description"),
             ["React", "NextJS", "Material-UI", "Figma"]
           )}
           illustration={ImageCollection.rakutenIllustration}

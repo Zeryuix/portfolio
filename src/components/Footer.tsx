@@ -1,7 +1,10 @@
 import Image from "next/image";
 import ImageCollection from "./ImageCollection";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
+  
   return (
     <div className="w-full bg-[#0f0f17] py-6 flex flex-col items-center">
       <div className="flex items-center gap-4 mb-4 mt-[22px]">
@@ -30,7 +33,7 @@ export default function Footer() {
           />
         </a>
       </div>
-      <p className="text-white">LÉO MERMET ©2025</p>
+      <p className="text-white">{t("footer.copyright")}</p>
     </div>
   );
 }

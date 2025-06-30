@@ -1,6 +1,7 @@
 import Image, { StaticImageData } from "next/image";
 import ImageCollection from "./ImageCollection";
 import React from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function PortfolioItem({
   title,
@@ -19,6 +20,7 @@ export default function PortfolioItem({
   mockup?: boolean;
   phoneIllustration?: boolean;
 }) {
+  const { t } = useLanguage();
   const contentSection = (
     <div className="flex flex-col text-black">
       <h2 className={`text-4xl font-semibold ${reverse ? "self-end" : ""}`}>
@@ -37,7 +39,11 @@ export default function PortfolioItem({
       >
         <div className="w-fit">
           <div className="flex flex-row items-center">
-            <p>Lien{!!mockup ? " maquettes" : ""}</p>
+            <p>
+              {!!mockup
+                ? `${t("portfolio.mockup.link")}`
+                : `${t("portfolio.link")}`}
+            </p>
             <Image
               src={ImageCollection.externalLinkIcon}
               alt="external link icon"

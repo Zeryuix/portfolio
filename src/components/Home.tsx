@@ -1,9 +1,11 @@
 import Image from "next/image";
-import backgroundImage from "../assets/accueil-background.svg";
+import ImageCollection from "./ImageCollection";
 import { useState } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Home() {
   const [imageLoaded, setImageLoaded] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <div
@@ -14,7 +16,7 @@ export default function Home() {
         className={`absolute inset-0 transition-opacity duration-1000 ${imageLoaded ? "opacity-100" : "opacity-0"}`}
       >
         <Image
-          src={backgroundImage}
+          src={ImageCollection.backgroundImage}
           alt="Background"
           fill
           className="object-cover z-0"
@@ -24,12 +26,12 @@ export default function Home() {
       </div>
       <div className="z-10 flex flex-col items-center justify-center text-white">
         <p className="text-[40px] font-bold mb-5">Léo Mermet</p>
-        <p className="text-2xl mb-[74px]">Ingénieur développeur front-end</p>
+        <p className="text-2xl mb-[74px]">{t("home.title")}</p>
         <a
           href="#about"
           className="px-6 py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black text-xl inline-block cursor-pointer"
         >
-          Qui suis-je ?
+          {t("home.button")}
         </a>
       </div>
     </div>

@@ -9,7 +9,7 @@ import javascriptLogo from "../assets/javascript-logo.svg";
 import jestLogo from "../assets/jest-logo.svg";
 import reactLogo from "../assets/react-logo.svg";
 import typescriptLogo from "../assets/typescript-logo.svg";
-import backgroundImage from "../assets/accueil-background.svg";
+import backgroundImage from "../assets/accueil-background.jpg";
 import schoolLogo from "../assets/school-logo.svg";
 import workLogo from "../assets/work-logo.svg";
 import CVImage from "../assets/CV.svg";
@@ -23,6 +23,8 @@ import sendIcon from "../assets/send-icon.svg";
 import upIcon from "../assets/up-icon.svg";
 import githubIcon from "../assets/github-icon.svg";
 import mailIcon from "../assets/mail-icon.svg";
+import frFlag from "../assets/fr-flag.svg";
+import enFlag from "../assets/en-flag.svg";
 
 export default {
   profilImage,
@@ -50,4 +52,6 @@ export default {
   upIcon,
   githubIcon,
   mailIcon,
+  frFlag,
+  enFlag,
 };

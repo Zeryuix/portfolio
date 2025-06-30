@@ -2,19 +2,31 @@ import SkillItem from "./SkillItem";
 import Image from "next/image";
 import ImageCollection from "./ImageCollection";
 import ExperienceItem from "./ExperienceItem";
+import { useLanguage } from "@/contexts/LanguageContext";
+import React from "react";
 
 export default function Skills() {
+  const { t } = useLanguage();
+
+  const formatText = (text: string, replacements: { [key: string]: string }) => {
+    let formattedText = text;
+    Object.entries(replacements).forEach(([key, value]) => {
+      formattedText = formattedText.replace(key, value);
+    });
+    return <span dangerouslySetInnerHTML={{ __html: formattedText }} />;
+  };
+
   return (
-    <div className="flex flex-col bg-black items-center py-10 px-36">
-      <h2 className="mb-5 font-semibold text-2xl">👨‍💻 Compétences</h2>
+    <div id="skills" className="flex flex-col bg-black items-center py-10 px-36">
+      <h2 className="mb-5 font-semibold text-2xl">{t("skills.title")}</h2>
       <p className="font-semibold text-xl mb-3 text-center">
-        Mes compétences évoluent en permanence.
+        {t("skills.subtitle")}
       </p>
       <p className="text-[16px] max-w-[520px] text-center mx-auto mb-[60px]">
-        Je continue d'apprendre chaque jour grâce à une veille régulière, aussi
-        bien technique que design. J'ai récemment commencé à me former sur
-        <strong> Angular</strong>, et ce site est réalisé avec{" "}
-        <strong>NextJs</strong> !
+        {formatText(t("skills.description"), {
+          "Angular": "<strong>Angular</strong>",
+          "NextJs": "<strong>NextJs</strong>"
+        })}
       </p>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-9">
         <div className="flex flex-col gap-8 mt-16">
@@ -46,28 +58,27 @@ export default function Skills() {
       <div className="flex flex-row justify-between w-full gap-[478px]">
         <div className="w-1/3">
           <ExperienceItem
-            description="Chez Noesio, j'ai intégré une équipe agile en tant qu'unique développeur front-end sur un projet mobile d'envergure pour les centres commerciaux Westfield (URW), utilisés par plus d'un million de clients.
-Mon rôle consistait à concevoir, développer et maintenir l'application mobile en React Native, tout en respectant les bonnes pratiques de qualité logicielle."
+            description={t("experience.noesio")}
             isSchool={false}
             name="NOESIO"
             techs={["React Native", "Expo", "TypeScript", "React"]}
             year="2024"
           />
           <ExperienceItem
-            description="Chez Thales, j'ai intégré une équipe R&D travaillant sur un système de fusion multi-capteurs. Ma mission principale consistait à travailler sur le module d'évaluation des performances des radars de surveillance."
+            description={t("experience.thales")}
             isSchool={false}
             name="THALES LAS FRANCE"
             techs={["Python", "C++"]}
             year="2023 - 2024"
           />
           <ExperienceItem
-            description="École d'ingénieur en informatique"
+            description={t("experience.epita")}
             isSchool={true}
             name="EPITA"
             year="2019 - 2024"
           />
           <ExperienceItem
-            description="Semestre en Irlande"
+            description={t("experience.dorset")}
             isSchool={true}
             name="DORSET COLLEGE DUBLIN"
             year="2021"
@@ -84,7 +95,7 @@ Mon rôle consistait à concevoir, développer et maintenir l'application mobile
             className="px-6 py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black font-medium inline-block cursor-pointer"
           >
             <div className="flex flex-row items-center">
-              <p className="font-semibold text-[20px]">Visualiser CV</p>
+              <p className="font-semibold text-[20px]">{t("experience.cv")}</p>
               <Image
                 src={ImageCollection.eyeIcon}
                 alt="visualize icon"
