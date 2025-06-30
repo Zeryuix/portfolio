@@ -5,7 +5,6 @@ import ExperienceItem from "./ExperienceItem";
 import { useLanguage } from "@/contexts/LanguageContext";
 import React from "react";
 import AnimatedElement from "./AnimatedElement";
-import { motion } from "framer-motion";
 
 export default function Skills() {
   const { t } = useLanguage();

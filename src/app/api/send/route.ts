@@ -35,11 +35,11 @@ export async function POST(request: NextRequest) {
       console.error("Error:", (error as Error).message);
 
       if ("statusCode" in error) {
-        console.error("Code error:", (error as any).statusCode);
+        console.error("Code error:", (error as { statusCode: unknown }).statusCode);
       }
 
       if ("data" in error) {
-        console.error("Error data:", (error as any).data);
+        console.error("Error data:", (error as { data: unknown }).data);
       }
 
       return NextResponse.json(

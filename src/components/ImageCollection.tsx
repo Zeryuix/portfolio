@@ -26,7 +26,7 @@ import mailIcon from "../assets/mail-icon.svg";
 import frFlag from "../assets/fr-flag.svg";
 import enFlag from "../assets/en-flag.svg";
 
-export default {
+const ImageCollection = {
   profilImage,
   cssLogo,
   expoLogo,
@@ -55,3 +55,5 @@ export default {
   frFlag,
   enFlag,
 };
+
+export default ImageCollection;

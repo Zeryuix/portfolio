@@ -1,7 +1,7 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import ImageCollection from "./ImageCollection";
 import Image from "next/image";
-import { ChangeEvent, FormEvent, useState } from "react";
+import { useState } from "react";
 import Input from "./Input";
 import Footer from "./Footer";
 import AnimatedElement from "./AnimatedElement";
