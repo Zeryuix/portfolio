@@ -78,7 +78,7 @@ export default function Input({
     setError(validateInput(e.target.value));
   };
 
-  const inputClasses = `w-full bg-[#f2f2f7] p-4 rounded-none text-gray-700 focus:outline-none ${
+  const inputClasses = `w-[500px] bg-[#f2f2f7] p-4 rounded-none text-gray-700 focus:outline-none ${
     error && touched ? "border-2 border-red-500" : ""
   }`;
 

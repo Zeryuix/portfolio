@@ -2,6 +2,8 @@ import Image from "next/image";
 import ImageCollection from "./ImageCollection";
 import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import AnimatedElement from "./AnimatedElement";
+import { motion } from "framer-motion";
 
 export default function Home() {
   const [imageLoaded, setImageLoaded] = useState(false);
@@ -25,14 +27,24 @@ export default function Home() {
         />
       </div>
       <div className="z-10 flex flex-col items-center justify-center text-white">
-        <p className="text-[40px] font-bold mb-5">Léo Mermet</p>
-        <p className="text-2xl mb-[74px]">{t("home.title")}</p>
-        <a
-          href="#about"
-          className="px-6 py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black text-xl inline-block cursor-pointer"
-        >
-          {t("home.button")}
-        </a>
+        <AnimatedElement variant="slideUp" delay={0.2}>
+          <p className="text-[40px] font-bold mb-5">Léo Mermet</p>
+        </AnimatedElement>
+        
+        <AnimatedElement variant="slideUp" delay={0.4}>
+          <p className="text-2xl mb-[74px]">{t("home.title")}</p>
+        </AnimatedElement>
+        
+        <AnimatedElement variant="scale" delay={0.6}>
+          <motion.a
+            href="#about"
+            className="px-6 py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black text-xl inline-block cursor-pointer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            {t("home.button")}
+          </motion.a>
+        </AnimatedElement>
       </div>
     </div>
   );

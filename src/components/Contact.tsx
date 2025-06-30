@@ -1,9 +1,11 @@
-import Input from "./Input";
-import Image from "next/image";
-import ImageCollection from "./ImageCollection";
-import Footer from "./Footer";
-import { useState } from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import ImageCollection from "./ImageCollection";
+import Image from "next/image";
+import { ChangeEvent, FormEvent, useState } from "react";
+import Input from "./Input";
+import Footer from "./Footer";
+import AnimatedElement from "./AnimatedElement";
+import { motion } from "framer-motion";
 
 export default function Contact() {
   const { t } = useLanguage();
@@ -72,76 +74,111 @@ export default function Contact() {
   };
 
   return (
-    <div id="contact" className="flex flex-col bg-black items-center pt-[40px]">
-      <h2 className="text-white mb-[40px] font-semibold text-2xl">
-        {t("contact.title")}
-      </h2>
-      <p className="max-w-lg text-center mb-[40px]">
-        {t("contact.description")}
-      </p>
+    <div id="contact" className="flex flex-col bg-black items-center pt-[40px] w-full">
+      <AnimatedElement variant="fadeIn">
+        <h2 className="text-white mb-[40px] font-semibold text-2xl">
+          {t("contact.title")}
+        </h2>
+      </AnimatedElement>
+      
+      <AnimatedElement variant="fadeIn" delay={0.2}>
+        <p className="max-w-lg text-center mb-[40px]">
+          {t("contact.description")}
+        </p>
+      </AnimatedElement>
 
       {formSubmitted && (
-        <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6 max-w-lg w-full">
-          <p className="text-center">{t("contact.success")}</p>
-        </div>
+        <AnimatedElement variant="scale">
+          <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6 max-w-lg w-full">
+            <p className="text-center">{t("contact.success")}</p>
+          </div>
+        </AnimatedElement>
       )}
 
       {submitError && (
-        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6 max-w-lg w-full">
-          <p className="text-center">{submitError}</p>
-        </div>
+        <AnimatedElement variant="scale">
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mb-6 max-w-lg w-full">
+            <p className="text-center">{submitError}</p>
+          </div>
+        </AnimatedElement>
       )}
+      
       <form
         onSubmit={handleSubmit}
-        className="w-full max-w-lg items-center flex flex-col"
+        className="w-full max-w-lg flex flex-col items-center"
       >
-        <Input
-          type="name"
-          value={formData.name}
-          onChange={handleInputChange("name")}
-        />
-        <Input
-          type="email"
-          value={formData.email}
-          onChange={handleInputChange("email")}
-        />
-        <Input
-          type="message"
-          value={formData.message}
-          onChange={handleInputChange("message")}
-        />
-        <button
-          type="submit"
-          className="mt-6 mb-20 px-4 py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black font-semibold self-center"
-          disabled={submitting}
-        >
-          <div className="flex flex-row items-center justify-center">
-            <p className="font-semibold text-[20px]">
-              {submitting ? t("contact.sending") : t("contact.send")}
-            </p>
-            {!submitting && (
-              <Image
-                src={ImageCollection.sendIcon}
-                alt="send icon"
-                width={24}
-                height={24}
-                className="ml-2"
-              />
-            )}
-          </div>
-        </button>
+        <AnimatedElement variant="slideUp" delay={0.3}>
+          <Input
+            type="name"
+            value={formData.name}
+            onChange={handleInputChange("name")}
+          />
+        </AnimatedElement>
+        
+        <AnimatedElement variant="slideUp" delay={0.4}>
+          <Input
+            type="email"
+            value={formData.email}
+            onChange={handleInputChange("email")}
+          />
+        </AnimatedElement>
+        
+        <AnimatedElement variant="slideUp" delay={0.5}>
+          <Input
+            type="message"
+            value={formData.message}
+            onChange={handleInputChange("message")}
+          />
+        </AnimatedElement>
+        <AnimatedElement variant="slideUp" delay={0.6}>
+          <motion.button
+            type="submit"
+            className="mt-6 mb-20 px-4 py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black font-semibold self-center"
+            disabled={submitting}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <div className="flex flex-row items-center justify-center">
+              <p className="font-semibold text-[20px]">
+                {submitting ? t("contact.sending") : t("contact.send")}
+              </p>
+              {!submitting && (
+                <motion.div
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ repeat: Infinity, duration: 1.5, repeatType: "loop" }}
+                >
+                  <Image
+                    src={ImageCollection.sendIcon}
+                    alt="send icon"
+                    width={24}
+                    height={24}
+                    className="ml-2"
+                  />
+                </motion.div>
+              )}
+            </div>
+          </motion.button>
+        </AnimatedElement>
       </form>
 
-      <a
+      <motion.a
         className="w-12 h-12 bg-secondary flex items-center justify-center z-10 mb-[-24px] cursor-pointer"
         href="#home"
+        whileHover={{ y: -5 }}
+        whileTap={{ scale: 0.9 }}
+        transition={{ type: "spring", stiffness: 400, damping: 10 }}
       >
-        <Image
-          src={ImageCollection.upIcon}
-          alt="go up icon"
-          className="self-center"
-        />
-      </a>
+        <motion.div
+          animate={{ y: [0, -3, 0] }}
+          transition={{ repeat: Infinity, duration: 1.5, repeatType: "loop" }}
+        >
+          <Image
+            src={ImageCollection.upIcon}
+            alt="go up icon"
+            className="self-center"
+          />
+        </motion.div>
+      </motion.a>
       <Footer />
     </div>
   );
