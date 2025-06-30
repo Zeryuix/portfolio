@@ -9,7 +9,10 @@ import AnimatedElement from "./AnimatedElement";
 export default function Skills() {
   const { t } = useLanguage();
 
-  const formatText = (text: string, replacements: { [key: string]: string }) => {
+  const formatText = (
+    text: string,
+    replacements: { [key: string]: string }
+  ) => {
     let formattedText = text;
     Object.entries(replacements).forEach(([key, value]) => {
       formattedText = formattedText.replace(key, value);
@@ -18,22 +21,27 @@ export default function Skills() {
   };
 
   return (
-    <div id="skills" className="flex flex-col bg-black items-center py-10 px-4 sm:px-8 md:px-16 lg:px-36">
+    <div
+      id="skills"
+      className="flex flex-col bg-black items-center py-10 px-4 sm:px-8 md:px-16 lg:px-36"
+    >
       <AnimatedElement variant="fadeIn">
-        <h2 className="mb-5 font-semibold text-2xl">{t("skills.title")}</h2>
+        <h2 className="mb-5 font-semibold text-2xl text-white">
+          {t("skills.title")}
+        </h2>
       </AnimatedElement>
-      
+
       <AnimatedElement variant="fadeIn" delay={0.2}>
-        <p className="font-semibold text-xl mb-3 text-center">
+        <p className="font-semibold text-xl mb-3 text-center text-white">
           {t("skills.subtitle")}
         </p>
       </AnimatedElement>
-      
+
       <AnimatedElement variant="fadeIn" delay={0.3}>
-        <p className="text-[16px] max-w-[520px] text-center mx-auto mb-[60px]">
+        <p className="text-[16px] max-w-[520px] text-center mx-auto mb-[60px] text-white">
           {formatText(t("skills.description"), {
-            "Angular": "<strong>Angular</strong>",
-            "NextJs": "<strong>NextJs</strong>"
+            Angular: "<strong>Angular</strong>",
+            NextJs: "<strong>NextJs</strong>",
           })}
         </p>
       </AnimatedElement>
@@ -44,7 +52,10 @@ export default function Skills() {
               <SkillItem skill="React" skillImage={ImageCollection.reactLogo} />
             </AnimatedElement>
             <AnimatedElement variant="scale" delay={0.6}>
-              <SkillItem skill="Flutter" skillImage={ImageCollection.flutterLogo} />
+              <SkillItem
+                skill="Flutter"
+                skillImage={ImageCollection.flutterLogo}
+              />
             </AnimatedElement>
             <AnimatedElement variant="scale" delay={0.7}>
               <SkillItem skill="Git" skillImage={ImageCollection.gitLogo} />
@@ -117,7 +128,12 @@ export default function Skills() {
         </div>
         <div className="flex flex-col items-center w-full lg:w-2/5 mt-4">
           <div className="mb-6 flex justify-center">
-            <Image src={ImageCollection.CVImage} alt="CV preview" width={434} className="max-w-[300px] lg:max-w-none" />
+            <Image
+              src={ImageCollection.CVImage}
+              alt="CV preview"
+              width={434}
+              className="max-w-[300px] lg:max-w-none"
+            />
           </div>
           <a
             href="/CV_Leo_MERMET_2025.pdf"

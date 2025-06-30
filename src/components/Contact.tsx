@@ -74,15 +74,18 @@ export default function Contact() {
   };
 
   return (
-    <div id="contact" className="flex flex-col bg-black items-center pt-[40px] w-full px-4 sm:px-8">
+    <div
+      id="contact"
+      className="flex flex-col bg-black items-center pt-[40px] w-full px-4 sm:px-8"
+    >
       <AnimatedElement variant="fadeIn">
         <h2 className="text-white mb-[40px] font-semibold text-2xl">
           {t("contact.title")}
         </h2>
       </AnimatedElement>
-      
+
       <AnimatedElement variant="fadeIn" delay={0.2}>
-        <p className="max-w-lg text-center mb-[40px] px-4">
+        <p className="max-w-lg text-center mb-[40px] px-4 text-white">
           {t("contact.description")}
         </p>
       </AnimatedElement>
@@ -102,7 +105,7 @@ export default function Contact() {
           </div>
         </AnimatedElement>
       )}
-      
+
       <form
         onSubmit={handleSubmit}
         className="w-full max-w-lg flex flex-col items-center"
@@ -114,7 +117,7 @@ export default function Contact() {
             onChange={handleInputChange("name")}
           />
         </AnimatedElement>
-        
+
         <AnimatedElement variant="slideUp" delay={0.4}>
           <Input
             type="email"
@@ -122,7 +125,7 @@ export default function Contact() {
             onChange={handleInputChange("email")}
           />
         </AnimatedElement>
-        
+
         <AnimatedElement variant="slideUp" delay={0.5}>
           <Input
             type="message"
@@ -145,7 +148,11 @@ export default function Contact() {
               {!submitting && (
                 <motion.div
                   animate={{ x: [0, 5, 0] }}
-                  transition={{ repeat: Infinity, duration: 1.5, repeatType: "loop" }}
+                  transition={{
+                    repeat: Infinity,
+                    duration: 1.5,
+                    repeatType: "loop",
+                  }}
                 >
                   <Image
                     src={ImageCollection.sendIcon}
