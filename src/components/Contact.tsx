@@ -74,7 +74,7 @@ export default function Contact() {
   };
 
   return (
-    <div id="contact" className="flex flex-col bg-black items-center pt-[40px] w-full">
+    <div id="contact" className="flex flex-col bg-black items-center pt-[40px] w-full px-4 sm:px-8">
       <AnimatedElement variant="fadeIn">
         <h2 className="text-white mb-[40px] font-semibold text-2xl">
           {t("contact.title")}
@@ -82,7 +82,7 @@ export default function Contact() {
       </AnimatedElement>
       
       <AnimatedElement variant="fadeIn" delay={0.2}>
-        <p className="max-w-lg text-center mb-[40px]">
+        <p className="max-w-lg text-center mb-[40px] px-4">
           {t("contact.description")}
         </p>
       </AnimatedElement>
@@ -133,7 +133,7 @@ export default function Contact() {
         <AnimatedElement variant="slideUp" delay={0.6}>
           <motion.button
             type="submit"
-            className="mt-6 mb-20 px-4 py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black font-semibold self-center"
+            className="mt-6 mb-10 sm:mb-20 px-4 py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black font-semibold self-center"
             disabled={submitting}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

@@ -13,7 +13,6 @@ export default function PortfolioItem({
   reverse = false,
   mockup = false,
   phoneIllustration = false,
-  imageSize,
 }: {
   title: string;
   description: string | React.ReactNode;
@@ -22,7 +21,6 @@ export default function PortfolioItem({
   reverse?: boolean;
   mockup?: boolean;
   phoneIllustration?: boolean;
-  imageSize?: { width: number; height: number };
 }) {
   const { t } = useLanguage();
   const contentSection = (
@@ -93,18 +91,18 @@ export default function PortfolioItem({
         <Image
           src={illustration}
           alt={`${title} illustration`}
-          className={`${reverse ? `${phoneIllustration ? "ml-28" : ""}` : `${phoneIllustration ? "mr-28" : ""}`}`}
-          width={imageSize ? imageSize.width : (phoneIllustration ? 600 : 1000)}
-          height={imageSize ? imageSize.height : (phoneIllustration ? 800 : 500)}
+          className={`${reverse ? `${phoneIllustration ? "lg:ml-28" : ""}` : `${phoneIllustration ? "lg:mr-28" : ""}`} max-w-[300px] lg:max-w-none`}
         />
       </motion.div>
     </AnimatedElement>
   );
 
   return (
-    <div className="flex flex-row gap-80 items-center">
-      {reverse ? imageSection : contentSection}
-      {reverse ? contentSection : imageSection}
+    <div
+      className={`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} justify-between items-center w-full gap-8 md:gap-12`}
+    >
+      {contentSection}
+      {imageSection}
     </div>
   );
 }

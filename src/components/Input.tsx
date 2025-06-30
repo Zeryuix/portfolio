@@ -78,17 +78,17 @@ export default function Input({
     setError(validateInput(e.target.value));
   };
 
-  const inputClasses = `w-[500px] bg-[#f2f2f7] p-4 rounded-none text-gray-700 focus:outline-none ${
+  const inputClasses = `w-full sm:w-[400px] md:w-[500px] bg-[#f2f2f7] p-4 rounded-none text-gray-700 focus:outline-none ${
     error && touched ? "border-2 border-red-500" : ""
   }`;
 
   return (
-    <div className="w-full max-w-lg mb-4">
+    <div className="w-full max-w-lg mb-4 flex justify-center lg:block">
       {type === "message" ? (
         <>
           <textarea
             placeholder={placeholder || getDefaultPlaceholder()}
-            className={`${inputClasses} h-48 resize-none`}
+            className={`${inputClasses} h-48 resize-none w-full sm:w-[400px] md:w-[500px]`}
             required
             value={value || ""}
             onChange={handleChange}

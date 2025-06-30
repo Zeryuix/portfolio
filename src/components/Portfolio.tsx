@@ -22,7 +22,7 @@ export default function Portfolio() {
   return (
     <div
       id="portfolio"
-      className="flex flex-col bg-white items-center px-[124px] py-10"
+      className="flex flex-col bg-white items-center px-4 sm:px-8 md:px-16 lg:px-[124px] py-10"
     >
       <h2 className="text-black mb-[54px] font-semibold text-2xl">
         {t("portfolio.title")}
@@ -40,7 +40,6 @@ export default function Portfolio() {
           link="https://play.google.com/store/apps/details?id=com.westfield.one&pli=1"
           title="URW"
           phoneIllustration={true}
-          imageSize={{ width: 600, height: 800 }}
         />
         <PortfolioItem
           description={highlightTechs(t("portfolio.newrest.description"), [
@@ -54,7 +53,6 @@ export default function Portfolio() {
           title="Newrest"
           reverse={true}
           mockup={true}
-          imageSize={{ width: 1000, height: 600 }}
         />
         <PortfolioItem
           description={highlightTechs(t("portfolio.epitatou.description"), [
@@ -68,7 +66,6 @@ export default function Portfolio() {
           title="Epitatou"
           mockup={true}
           phoneIllustration={true}
-          imageSize={{ width: 600, height: 800 }}
         />
         <PortfolioItem
           description={highlightTechs(t("portfolio.rakuten.description"), [
@@ -82,7 +79,6 @@ export default function Portfolio() {
           title="Back-Office Rakuten"
           reverse={true}
           mockup={true}
-          imageSize={{ width: 1600, height: 600 }}
         />
       </div>
     </div>

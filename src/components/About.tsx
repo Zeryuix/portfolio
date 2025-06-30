@@ -19,23 +19,26 @@ export default function About() {
   };
 
   return (
-    <div id="about" className="flex flex-col bg-white items-center py-10 px-36">
+    <div
+      id="about"
+      className="flex flex-col bg-white items-center py-10 px-4 sm:px-8 md:px-16 lg:px-36"
+    >
       <AnimatedElement variant="fadeIn">
         <h2 className="text-black mb-[54px] font-semibold text-2xl">
           👋 {t("about.title")}
         </h2>
       </AnimatedElement>
-      <div className="flex flex-row justify-between gap-44 items-center">
+      <div className="flex flex-col lg:flex-row justify-between gap-8 md:gap-16 lg:gap-44 items-center">
         <AnimatedElement variant="slideRight" delay={0.2}>
           <Image
             src={ImageCollection.profilImage}
             alt={"Profil Image"}
-            width={1000}
-            height={1000}
-            className="rounded-full shadow-[4px_4px_8px_0_rgba(13,39,80,0.25)_,_-12px_-12px_38px_0_rgba(255,255,255,1)]"
+            width={256}
+            height={256}
+            className="rounded-full shadow-[4px_4px_8px_0_rgba(13,39,80,0.25)_,_-12px_-12px_38px_0_rgba(255,255,255,1)] max-w-[300px] lg:max-w-none"
           />
         </AnimatedElement>
-        <div className="text-black space-y-6 text-[20px]">
+        <div className="text-black space-y-6 text-[16px] md:text-[18px] lg:text-[20px] mt-8 lg:mt-0">
           <AnimatedElement variant="slideLeft" delay={0.3}>
             <p>
               {formatText(t("about.paragraph1"), {

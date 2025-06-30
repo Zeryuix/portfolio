@@ -19,7 +19,7 @@ export default function Skills() {
   };
 
   return (
-    <div id="skills" className="flex flex-col bg-black items-center py-10 px-36">
+    <div id="skills" className="flex flex-col bg-black items-center py-10 px-4 sm:px-8 md:px-16 lg:px-36">
       <AnimatedElement variant="fadeIn">
         <h2 className="mb-5 font-semibold text-2xl">{t("skills.title")}</h2>
       </AnimatedElement>
@@ -87,8 +87,8 @@ export default function Skills() {
         </div>
       </AnimatedElement>
       <hr className="w-2/3 mt-[60px] mb-[54px] border-[1px] border-grey/25" />
-      <div className="flex flex-row justify-between w-full gap-[478px]">
-        <div className="w-1/3">
+      <div className="flex flex-col lg:flex-row justify-between w-full gap-8 lg:gap-16 xl:gap-[478px]">
+        <div className="w-full lg:w-1/3">
           <ExperienceItem
             description={t("experience.noesio")}
             isSchool={false}
@@ -116,15 +116,15 @@ export default function Skills() {
             year="2021"
           />
         </div>
-        <div className="flex flex-col items-center w-2/5 mt-4">
-          <div className="mb-6">
-            <Image src={ImageCollection.CVImage} alt="CV preview" width={434} />
+        <div className="flex flex-col items-center w-full lg:w-2/5 mt-4">
+          <div className="mb-6 flex justify-center">
+            <Image src={ImageCollection.CVImage} alt="CV preview" width={434} className="max-w-[300px] lg:max-w-none" />
           </div>
           <a
             href="/CV_Leo_MERMET_2025.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-6 py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black font-medium inline-block cursor-pointer"
+            className="px-4 lg:px-6 py-2 lg:py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black font-medium inline-block cursor-pointer mx-auto lg:mx-0"
           >
             <div className="flex flex-row items-center">
               <p className="font-semibold text-[20px]">{t("experience.cv")}</p>
