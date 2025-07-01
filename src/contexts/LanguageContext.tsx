@@ -191,6 +191,11 @@ const translations: Translations = {
     fr: "LÉO MERMET ©2025",
     en: "LÉO MERMET ©2025",
   },
+  // Language
+  "language": {
+    fr: "fr",
+    en: "en",
+  },
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(

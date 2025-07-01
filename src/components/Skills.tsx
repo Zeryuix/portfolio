@@ -136,7 +136,7 @@ export default function Skills() {
             />
           </div>
           <a
-            href="/CV_Leo_MERMET_2025.pdf"
+            href={t("language") === "en" ? "/CV_Leo_MERMET_2025_EN.pdf" : "/CV_Leo_MERMET_2025_FR.pdf"}
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 lg:px-6 py-2 lg:py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black font-medium inline-block cursor-pointer mx-auto lg:mx-0"
