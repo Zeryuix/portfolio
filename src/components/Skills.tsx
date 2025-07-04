@@ -49,7 +49,10 @@ export default function Skills() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-9">
           <div className="flex flex-col gap-8 mt-16">
             <AnimatedElement variant="scale" delay={0.5}>
-              <SkillItem skill="React" skillImage={ImageCollection.reactLogo} />
+              <SkillItem
+                skill="React & React Native"
+                skillImage={ImageCollection.reactLogo}
+              />
             </AnimatedElement>
             <AnimatedElement variant="scale" delay={0.6}>
               <SkillItem
@@ -136,7 +139,11 @@ export default function Skills() {
             />
           </div>
           <a
-            href={t("language") === "en" ? "/CV_Leo_MERMET_2025_EN.pdf" : "/CV_Leo_MERMET_2025_FR.pdf"}
+            href={
+              t("language") === "en"
+                ? "/CV_Leo_MERMET_2025_EN.pdf"
+                : "/CV_Leo_MERMET_2025_FR.pdf"
+            }
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 lg:px-6 py-2 lg:py-3 bg-primary backdrop-blur-sm border rounded-lg hover:bg-primary/50 transition-all duration-300 text-black font-medium inline-block cursor-pointer mx-auto lg:mx-0"
